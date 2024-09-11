@@ -5,9 +5,17 @@ const Navbar = () => {
     <div className="container-nav">
       <h3>Instant Aberturas</h3>
       <ul>
-        <li>Todo</li>
-        <li>Puertas</li>
-        <li>Ventanas</li>
+        <li>
+          <a className="active" href="#">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#">Shop</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
       </ul>
       <CartWidget />
     </div>

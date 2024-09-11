@@ -1,12 +1,9 @@
-import ProductCard from "../../common/productCard/ProductCard";
-
-const ItemListContainer = () => {
+// import ProductCard from "../../common/productCard/ProductCard";
+import "./itemListContainer.css";
+const ItemListContainer = ({ greeting }) => {
   return (
-    <div>
-      <h1>productos</h1>
-      <div>
-        <ProductCard />
-      </div>
+    <div className="container-itemList">
+      <p className="saludo">{greeting}</p>
     </div>
   );
 };
