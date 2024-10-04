@@ -15,7 +15,13 @@ const ItemDetailContainer = () => {
     }
   }, [id]);
 
-  return <ItemDetail item={item} />;
+  const onAdd = (quantity) => {
+    console.log(`Agregaste ${quantity} productos al carrito`);
+    let productsForCart = { ...item, quantity };
+    console.log(productsForCart);
+  };
+
+  return <ItemDetail item={item} onAdd={onAdd} />;
 };
 
 export default ItemDetailContainer;
