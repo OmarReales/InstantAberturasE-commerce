@@ -3,17 +3,17 @@ import "./ItemDetail.css";
 const ItemDetail = ({ item, onAdd }) => {
   console.log(item);
   return (
-    <div>
-      <div className="img">
-        <img src={item.imageURL} alt={item.title} />
+    <div id="prodetails" className="section-p1">
+      <div className="single-pro-image">
+        <img src={item.imageURL} width="100%" alt={item.title} />
       </div>
-      <div className="details">
-        <h2>{item.title}</h2>
-        <h4>{item.stock}</h4>
-        <h5>{item.price}</h5>
+      <div className="singe-pro-details">
+        <h4>{item.title}</h4>
+        <span>Stock:{item.stock}</span>
+        <h2>{item.price}</h2>
+        <h4>Descripcion:</h4>
         <span>{item.description}</span>
       </div>
-
       <CounterContainer onAdd={onAdd} stock={item.stock} />
     </div>
   );
