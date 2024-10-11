@@ -1,5 +1,5 @@
 import CounterContainer from "../../common/counter/CounterContainer";
-import "./ItemDetail.css";
+import "./itemDetail.css";
 const ItemDetail = ({ item, onAdd }) => {
   console.log(item);
   return (
