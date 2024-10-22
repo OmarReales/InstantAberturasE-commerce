@@ -1,6 +1,6 @@
 import CounterContainer from "../../common/counter/CounterContainer";
 import "./itemDetail.css";
-const ItemDetail = ({ item, onAdd }) => {
+const ItemDetail = ({ item, onAdd, totalItems }) => {
   console.log(item);
   return (
     <div id="prodetails" className="section-p1">
@@ -13,8 +13,13 @@ const ItemDetail = ({ item, onAdd }) => {
         <h2>{item.price}</h2>
         <h4>Descripcion:</h4>
         <span>{item.description}</span>
+        <spam>tienes {totalItems} en el carrito</spam>
       </div>
-      <CounterContainer onAdd={onAdd} stock={item.stock} />
+      <CounterContainer
+        onAdd={onAdd}
+        stock={item.stock}
+        totalItems={totalItems}
+      />
     </div>
   );
 };
