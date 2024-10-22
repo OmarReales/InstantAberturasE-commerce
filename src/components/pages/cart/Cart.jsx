@@ -13,9 +13,14 @@ export const Cart = ({ cart, clearCart, deleteFromCart, total }) => {
           </div>
         );
       })}
-      <button onClick={clearCart}>Vaciar carrito</button>
-      <button>Finalizar compra</button>
-      <p>Total: ${total}</p>
+
+      {total > 0 && (
+        <>
+          <button onClick={clearCart}>Vaciar carrito</button>
+          <button>Finalizar compra</button>
+          <p>Total: ${total}</p>
+        </>
+      )}
     </div>
   );
 };

@@ -13,7 +13,6 @@ const ItemDetail = ({ item, onAdd, totalItems }) => {
         <h2>{item.price}</h2>
         <h4>Descripcion:</h4>
         <span>{item.description}</span>
-        <spam>tienes {totalItems} en el carrito</spam>
       </div>
       <CounterContainer
         onAdd={onAdd}
