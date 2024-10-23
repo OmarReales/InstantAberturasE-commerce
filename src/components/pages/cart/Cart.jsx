@@ -1,4 +1,25 @@
+import Swal from "sweetalert2";
+
 export const Cart = ({ cart, clearCart, deleteFromCart, total }) => {
+  const clearCartAlert = () => {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Esta acción no se puede deshacer",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, vaciar carrito",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clearCart();
+        Swal.fire("Carrito vaciado", "", "success");
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire("Operación cancelada", "", "info");
+      }
+    });
+  };
+
   return (
     <div>
       <h1>Cart</h1>
@@ -16,7 +37,7 @@ export const Cart = ({ cart, clearCart, deleteFromCart, total }) => {
 
       {total > 0 && (
         <>
-          <button onClick={clearCart}>Vaciar carrito</button>
+          <button onClick={clearCartAlert}>Vaciar carrito</button>
           <button>Finalizar compra</button>
           <p>Total: ${total}</p>
         </>

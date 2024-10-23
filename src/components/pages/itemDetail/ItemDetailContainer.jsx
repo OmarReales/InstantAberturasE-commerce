@@ -3,6 +3,8 @@ import { useState, useEffect, useContext } from "react";
 import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import Swal from "sweetalert2";
+
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   const { addToCart, getTotalQuantityById } = useContext(CartContext);
@@ -19,9 +21,15 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const onAdd = (quantity) => {
-    console.log(`Agregaste ${quantity} productos al carrito`);
     let productsForCart = { ...item, quantity };
     addToCart(productsForCart);
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Producto agregado al carrito",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   return <ItemDetail item={item} onAdd={onAdd} totalItems={totalItems} />;
