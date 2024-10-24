@@ -6,8 +6,8 @@ export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (products) => {
-    let existe = cart.some((element) => element.id === products.id);
-    if (existe) {
+    let exist = cart.some((element) => element.id === products.id);
+    if (exist) {
       let nuevoArray = cart.map((element) => {
         return element.id === products.id
           ? { ...element, quantity: products.quantity }

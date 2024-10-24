@@ -1,5 +1,5 @@
 import { Skeleton } from "@mui/material";
-import ProductCard from "../../../common/productCard/ProductCard";
+import ProductCard from "../../common/productCard/ProductCard";
 
 const ItemList = ({ items }) => {
   if (items.length === 0) {
