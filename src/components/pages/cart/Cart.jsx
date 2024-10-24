@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 export const Cart = ({ cart, clearCart, deleteFromCart, total }) => {
   const clearCartAlert = () => {
@@ -38,8 +39,11 @@ export const Cart = ({ cart, clearCart, deleteFromCart, total }) => {
       {total > 0 && (
         <>
           <button onClick={clearCartAlert}>Vaciar carrito</button>
-          <button>Finalizar compra</button>
           <p>Total: ${total}</p>
+
+          <Link to="/checkout">
+            <button>Finalizar compra</button>
+          </Link>
         </>
       )}
     </div>
