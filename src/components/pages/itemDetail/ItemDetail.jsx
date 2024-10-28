@@ -8,6 +8,7 @@ const ItemDetail = ({ item, onAdd, totalItems }) => {
         <img src={item.imageURL} width="100%" alt={item.title} />
       </div>
       <div className="singe-pro-details">
+        <h6>{item.category}</h6>
         <h4>{item.title}</h4>
         <span>Stock:{item.stock}</span>
         <h2>{item.price}</h2>

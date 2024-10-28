@@ -1,6 +1,6 @@
 const Counter = ({ contador, sumar, restar, onAdd }) => {
   return (
-    <div>
+    <div className="countercontainer">
       <button className="normal" onClick={restar}>
         -
       </button>
