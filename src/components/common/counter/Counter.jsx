@@ -1,10 +1,15 @@
 const Counter = ({ contador, sumar, restar, onAdd }) => {
   return (
     <div>
-      <button onClick={restar}>restar</button>
+      <button className="normal" onClick={restar}>
+        -
+      </button>
       <h2>{contador}</h2>
-      <button onClick={sumar}>sumar</button>
+      <button className="normal" onClick={sumar}>
+        +
+      </button>
       <button
+        className="normal addcart"
         onClick={() => {
           onAdd(contador);
         }}

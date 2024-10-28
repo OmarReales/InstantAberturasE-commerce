@@ -6,6 +6,12 @@
 }
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  margin-bottom: 40px;
+  width: 100%;
 }
 /* global styles */
 h1 {
@@ -40,16 +46,16 @@ p {
 button.normal {
   font-size: 14px;
   font-weight: 600;
-  padding: 15px 30px;
-  color: #000;
-  background-color: #fff;
+  padding: 15px 20px;
+  color: #fff;
+  background-color: #088178;
   border-radius: 4px;
   cursor: pointer;
   border: none;
   outline: none;
   transition: 0.2s;
 }
-button.white {
+/* button.white {
   font-size: 13px;
   font-weight: 600;
   padding: 11px 18px;
@@ -59,10 +65,8 @@ button.white {
   border: 1px solid #fff;
   outline: none;
   transition: 0.2s;
-}
-body {
-  width: 100%;
-}
+} */
+
 /* header inicio */
 #header {
   display: flex;
@@ -120,6 +124,9 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 footer .col {
   display: flex;
@@ -169,3 +176,16 @@ footer .copyright {
 }
 
 /* footer fin */
+
+/* details inicio */
+#prodetails {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 35%;
+}
+#prodetails .single-pro-image {
+  width: 20%;
+  margin-right: 50px;
+}
+
+/* details fin */

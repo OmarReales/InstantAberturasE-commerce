@@ -22,8 +22,8 @@ export const Cart = ({ cart, clearCart, deleteFromCart, total }) => {
   };
 
   return (
-    <div>
-      <h1>Cart</h1>
+    <div className="container">
+      <h1 className="title">Cart</h1>
       {cart.map((product) => {
         return (
           <div key={product.id}>
