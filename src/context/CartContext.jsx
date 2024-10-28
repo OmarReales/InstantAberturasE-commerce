@@ -8,12 +8,12 @@ export const CartContextProvider = ({ children }) => {
   const addToCart = (products) => {
     let exist = cart.some((element) => element.id === products.id);
     if (exist) {
-      let nuevoArray = cart.map((element) => {
+      let newArray = cart.map((element) => {
         return element.id === products.id
           ? { ...element, quantity: products.quantity }
           : element;
       });
-      setCart(nuevoArray);
+      setCart(newArray);
     } else {
       setCart([...cart, products]);
     }
@@ -36,7 +36,7 @@ export const CartContextProvider = ({ children }) => {
 
   const getTotalQuantityById = (id) => {
     let product = cart.find((element) => element.id === id);
-    return product ? product.quantity : 0;
+    return product ? product.quantity : 1;
   };
 
   let data = {
