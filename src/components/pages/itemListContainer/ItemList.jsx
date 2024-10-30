@@ -1,6 +1,5 @@
 import { Skeleton } from "@mui/material";
 import ProductCard from "../../common/productCard/ProductCard";
-import { Padding } from "@mui/icons-material";
 
 const ItemList = ({ items }) => {
   if (items.length === 0) {

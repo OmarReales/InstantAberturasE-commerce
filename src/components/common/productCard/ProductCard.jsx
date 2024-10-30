@@ -44,7 +44,22 @@ const ProductCard = ({ title, price, imageURL, brand, id }) => {
         </h4>
       </div>
       <Link to={`/itemDetail/${id}`}>
-        <button>Ver detalles</button>
+        <button
+          style={{
+            fontSize: "14px",
+            fontWeight: "500",
+            padding: "10px 20px",
+            color: "#fff",
+            backgroundColor: "#088178",
+            borderRadius: "4px",
+            cursor: "pointer",
+            border: "none",
+            outline: "none",
+            transition: "0.2s ease",
+          }}
+        >
+          Ver detalles
+        </button>
       </Link>
     </div>
   );
