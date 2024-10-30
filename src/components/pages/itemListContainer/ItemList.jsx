@@ -1,5 +1,6 @@
 import { Skeleton } from "@mui/material";
 import ProductCard from "../../common/productCard/ProductCard";
+import { Padding } from "@mui/icons-material";
 
 const ItemList = ({ items }) => {
   if (items.length === 0) {
@@ -23,20 +24,21 @@ const ItemList = ({ items }) => {
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alyngItems: "center",
-        gap: "20px",
-        flexWrap: "wrap",
-        marginTop: "20px",
-      }}
-    >
-      {items.map((item) => {
-        return <ProductCard key={item.id} {...item} />;
-      })}
-    </div>
+    <section style={{ padding: "40px 80px" }}>
+      <div
+        style={{
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "space-between",
+          paddingTop: "20px",
+          flexWrap: "wrap",
+        }}
+      >
+        {items.map((item) => {
+          return <ProductCard key={item.id} {...item} />;
+        })}
+      </div>
+    </section>
   );
 };
 
