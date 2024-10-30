@@ -1,8 +1,8 @@
 import CartWidget from "../../common/cartWidget/CartWidget";
 import { categories } from "./categories";
-
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
+
 const Navbar = () => {
   return (
     <div className="container-nav">

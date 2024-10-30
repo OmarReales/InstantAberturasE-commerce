@@ -6,6 +6,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import appImg from "../../../assets/app.jpg";
 import playImg from "../../../assets/play.jpg";
 import payImg from "../../../assets/pay.png";
+
 const Footer = () => {
   return (
     <footer className="section-p1">
