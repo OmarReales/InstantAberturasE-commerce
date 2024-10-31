@@ -3,7 +3,7 @@ import { Cart } from "./Cart";
 import { CartContext } from "../../../context/CartContext";
 
 const CartContainer = () => {
-  const { cart, clearCart, deleteFromCart, getTotalPrice } =
+  const { cart, clearCart, deleteFromCart, getTotalPrice, updateQuantity } =
     useContext(CartContext);
   let total = getTotalPrice();
 
@@ -13,6 +13,7 @@ const CartContainer = () => {
       clearCart={clearCart}
       deleteFromCart={deleteFromCart}
       total={total}
+      updateQuantity={updateQuantity}
     />
   );
 };

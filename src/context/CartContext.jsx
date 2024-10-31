@@ -41,6 +41,14 @@ export const CartContextProvider = ({ children }) => {
     return product ? product.quantity : 1;
   };
 
+  const updateQuantity = (id, newQuantity) => {
+    setCart(
+      cart.map((item) =>
+        item.id === id ? { ...item, quantity: Math.max(1, newQuantity) } : item
+      )
+    );
+  };
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -53,6 +61,7 @@ export const CartContextProvider = ({ children }) => {
     getTotalPrice,
     getTotalItems,
     getTotalQuantityById,
+    updateQuantity,
   };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
