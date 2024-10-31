@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { db } from "../../../firebaseConfig";
 import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
+import "./checkout.css";
 
 const Checkout = () => {
   const [user, setUser] = useState({
@@ -13,9 +14,7 @@ const Checkout = () => {
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
 
   const [orderId, setOrderId] = useState(null);
-
   const [isLoading, setIsLoading] = useState(false);
-
   const [error, setErrors] = useState({
     name: "",
     phone: "",
@@ -32,12 +31,12 @@ const Checkout = () => {
         ...error,
         name: "El nombre debe tener al menos cuatro caracteres",
       });
+      return;
     }
 
     setIsLoading(true);
 
     let total = getTotalPrice();
-
     const order = {
       buyer: user,
       items: cart,
@@ -68,37 +67,64 @@ const Checkout = () => {
   };
 
   if (isLoading) {
-    return <h2>Procesando compra...</h2>;
+    return <div className="loading">Procesando compra...</div>;
   }
 
   return (
-    <div>
+    <div className="checkout-container">
       {orderId ? (
-        <>
-          <h2>Compra realizada con exito</h2>
-          <p>Numero de orden: {orderId}</p>
-        </>
+        <div className="success-message">
+          <h2>¡Compra realizada con éxito!</h2>
+          <p>
+            Tu número de orden es: <span className="order-id">{orderId}</span>
+          </p>
+        </div>
       ) : (
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            onChange={handleChange}
-            placeholder="Nombre y Apellido"
-          />
-          <input
-            type="email"
-            name="email"
-            onChange={handleChange}
-            placeholder="Email"
-          />
-          <input
-            type="number"
-            name="phone"
-            onChange={handleChange}
-            placeholder="Telefono"
-          />
-          <button>Comprar</button>
+        <form onSubmit={handleSubmit} className="checkout-form">
+          <div className="input-group">
+            <input
+              type="text"
+              name="name"
+              onChange={handleChange}
+              placeholder="Nombre y Apellido"
+              value={user.name}
+            />
+            {error.name && <span className="error-message">{error.name}</span>}
+          </div>
+
+          <div className="input-group">
+            <input
+              type="email"
+              name="email"
+              onChange={handleChange}
+              placeholder="Email"
+              value={user.email}
+            />
+            {error.email && (
+              <span className="error-message">{error.email}</span>
+            )}
+          </div>
+
+          <div className="input-group">
+            <input
+              type="number"
+              name="phone"
+              onChange={handleChange}
+              placeholder="Teléfono"
+              value={user.phone}
+            />
+            {error.phone && (
+              <span className="error-message">{error.phone}</span>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            className="submit-button"
+            disabled={!user.name || !user.email || !user.phone}
+          >
+            Finalizar Compra
+          </button>
         </form>
       )}
     </div>
