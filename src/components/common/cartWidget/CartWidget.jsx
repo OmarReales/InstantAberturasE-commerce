@@ -8,7 +8,7 @@ const CartWidget = () => {
     <div>
       <Badge
         badgeContent={getTotalItems()}
-        color="primary"
+        color="warning"
         max={10}
         showZero={true}
       >
