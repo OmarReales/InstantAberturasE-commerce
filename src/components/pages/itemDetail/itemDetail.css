@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .item-detail {
   padding: 40px 80px;
   display: flex;

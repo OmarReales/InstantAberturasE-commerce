@@ -6,9 +6,12 @@ import { CartContextProvider } from "./context/CartContext";
 import CartContainer from "./components/pages/cart/CartContainer";
 import Checkout from "./components/pages/checkout/Checkout";
 import Footer from "./components/layout/footer/Footer";
+import ScrollToTop from "./components/common/scrollToTop/ScrollToTop";
+
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <CartContextProvider>
         <Navbar />
         <Routes>
