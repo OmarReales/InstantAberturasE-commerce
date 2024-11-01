@@ -28,7 +28,7 @@ Instant Aberturas is an e-commerce application for selling doors and windows. Th
 
 3. Create a `.env` file in the root directory and add your Firebase configuration:
 
-   ```env
+   ```
    VITE_API_KEY=YOUR_API_KEY
    VITE_AUTH_DOMAIN=YOUR_AUTH_DOMAIN
    VITE_PROJECT_ID=YOUR_PROJECT_ID
@@ -78,6 +78,7 @@ Instant Aberturas is an e-commerce application for selling doors and windows. Th
 │   │   │   ├── cartWidget/
 │   │   │   │   └── [CartWidget.jsx]
 │   │   │   ├── counter/
+│   │   │   │   ├── [counter.css]
 │   │   │   │   ├── [Counter.jsx]
 │   │   │   │   └── [CounterContainer.jsx]
 │   │   │   ├── productCard/
@@ -91,14 +92,18 @@ Instant Aberturas is an e-commerce application for selling doors and windows. Th
 │   │   │   │   └── [categories.js]
 │   │   ├── pages/
 │   │   │   ├── cart/
+│   │   │   │   ├── [cart.css]
 │   │   │   │   ├── [Cart.jsx]
 │   │   │   │   └── [CartContainer.jsx]
 │   │   │   ├── checkout/
+│   │   │   │   ├── [checkout.css]
 │   │   │   │   └── [Checkout.jsx]
 │   │   │   ├── itemDetail/
+│   │   │   │   ├── [itemDetail.css]
 │   │   │   │   ├── [ItemDetail.jsx]
 │   │   │   │   └── [ItemDetailContainer.jsx]
 │   │   │   ├── itemListContainer/
+│   │   │   │   ├── itemListContainer.css
 │   │   │   │   ├── [ItemList.jsx]
 │   │   │   │   └── [ItemListContainer.jsx]
 │   ├── context/
@@ -107,5 +112,6 @@ Instant Aberturas is an e-commerce application for selling doors and windows. Th
 │   ├── [index.css]
 │   ├── [main.jsx]
 │   ├── [productsMock.js]
+├── [vercel.json]
 ├── [vite.config.js]
 ```
